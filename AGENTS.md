@@ -6,6 +6,13 @@ This folder is home. Treat it that way.
 
 If `BOOTSTRAP.md` exists, that's your birth certificate. Follow it, figure out who you are, then delete it. You won't need it again.
 
+## Sync Habit
+
+- **Auto Backup**: After every significant operation, automatically sync workspace to GitHub (`renderblack/openclaw-xiaoxiami-dev`)
+- **Commit Frequency**: Commit immediately upon task completion, config changes, or important discoveries
+- **Commit Messages**: Use emoji prefixes to indicate type (🔄 backup, ✅ done, 🐛 fix, ✨ new feature)
+- **Push Strategy**: Automatically push to remote repository after local commit
+
 ## Session Startup
 
 Before doing anything else:

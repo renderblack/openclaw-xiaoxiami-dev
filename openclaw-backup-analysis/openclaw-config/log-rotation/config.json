@@ -1,0 +1,62 @@
+{
+  "log_rotation_config": {
+    "version": "1.0",
+    "created_at": "2026-03-26T00:40:00Z",
+    "author": "小龙虾🦞",
+    "description": "OpenClaw日志轮转配置",
+    
+    "directories": {
+      "log_dir": "/home/openclaw/.openclaw/logs",
+      "backup_dir": "/home/openclaw/.openclaw/log-rotation/backups",
+      "state_dir": "/home/openclaw/.openclaw/log-rotation/state"
+    },
+    
+    "rotation_policy": {
+      "frequency": "daily",
+      "time": "02:00",
+      "timezone": "UTC+8",
+      "trigger": "time_based"
+    },
+    
+    "retention_policy": {
+      "keep_days": 30,
+      "compress_after_days": 7,
+      "max_total_size": "1GB",
+      "cleanup_schedule": "daily"
+    },
+    
+    "compression_settings": {
+      "method": "gzip",
+      "level": 9,
+      "remove_original": true,
+      "suffix": ".gz"
+    },
+    
+    "file_patterns": {
+      "include": ["*.log", "*.jsonl", "*.txt"],
+      "exclude": ["*.gz", "*.bz2", "*.zip"],
+      "min_size_to_rotate": "1KB",
+      "min_size_to_compress": "10KB"
+    },
+    
+    "monitoring": {
+      "generate_report": true,
+      "report_location": "/home/openclaw/.openclaw/log-rotation/state",
+      "notify_on_error": true,
+      "log_rotation_events": true
+    },
+    
+    "scripts": {
+      "rotation_script": "/home/openclaw/.openclaw/log-rotation/logrotate.sh",
+      "test_script": "/home/openclaw/.openclaw/log-rotation/test.sh",
+      "restore_script": "/home/openclaw/.openclaw/log-rotation/restore.sh"
+    },
+    
+    "safety_features": {
+      "dry_run_option": true,
+      "backup_before_rotation": false,
+      "max_file_age_before_deletion": "90 days",
+      "emergency_stop_file": "/home/openclaw/.openclaw/log-rotation/STOP"
+    }
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "providers": {
+    "custom-api-deepseek-com": {
+      "baseUrl": "https://api.deepseek.com/v1",
+      "apiKey": "sk-795c8721cded4cf7b4b02cdededc15fe",
+      "api": "openai-completions",
+      "models": [
+        {
+          "id": "deepseek-chat",
+          "name": "deepseek-chat (Custom Provider)",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 16000,
+          "maxTokens": 4096,
+          "api": "openai-completions"
+        }
+      ]
+    },
+    "custom-newapi": {
+      "baseUrl": "https://newapi.epsq.cn/v1",
+      "apiKey": "sk-GJRr6h1VAi7YSXJ2ir7DpEyhM2oGy4GNdlbhhiG9IhmUjiou",
+      "api": "openai-completions",
+      "models": [
+        {
+          "id": "MiniMax-M2.5",
+          "name": "MiniMax-M2.5 (Custom Provider)",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 16000,
+          "maxTokens": 4096,
+          "api": "openai-completions"
+        }
+      ]
+    },
+    "custom-newapi-epsq-cn": {
+      "baseUrl": "https://newapi.epsq.cn/v1",
+      "apiKey": "sk-GJRr6h1VAi7YSXJ2ir7DpEyhM2oGy4GNdlbhhiG9IhmUjiou",
+      "api": "openai-completions",
+      "models": [
+        {
+          "id": "claude-opus-4-6",
+          "name": "claude-opus-4-6 (Custom Provider)",
+          "api": "openai-completions",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 16000,
+          "maxTokens": 4096
+        },
+        {
+          "id": "kimi-k2.5",
+          "name": "kimi-k2.5 (Custom Provider)",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 16000,
+          "maxTokens": 4096,
+          "api": "openai-completions"
+        }
+      ]
+    }
+  }
+}

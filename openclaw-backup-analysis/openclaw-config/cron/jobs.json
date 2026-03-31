@@ -1,0 +1,146 @@
+{
+  "version": 1,
+  "jobs": [
+    {
+      "id": "61b2d6c9-355e-4ac4-bbd0-27223c6ceb0b",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:1022202630",
+      "name": "上午健康检查",
+      "enabled": true,
+      "createdAtMs": 1774485237805,
+      "updatedAtMs": 1774578333790,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 2 * * *",
+        "tz": "UTC"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行上午健康检查：1. 检查OpenClaw服务状态 2. 检查磁盘和内存使用 3. 查看项目进展 4. 更新项目记忆。如果发现问题立即报告，否则HEARTBEAT_OK。"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "1022202630"
+      },
+      "state": {
+        "nextRunAtMs": 1774663200000,
+        "lastRunAtMs": 1774578245857,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 87933,
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "ad3491c3-ce2c-4f02-b5e2-ad04950241c1",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:1022202630",
+      "name": "下午健康检查",
+      "enabled": true,
+      "createdAtMs": 1774485243163,
+      "updatedAtMs": 1774513269508,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8 * * *",
+        "tz": "UTC"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行下午健康检查：1. 检查备份状态 2. 管理日志文件 3. 安全扫描 4. 清理临时文件。如果发现问题立即报告，否则HEARTBEAT_OK。"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "1022202630"
+      },
+      "state": {
+        "nextRunAtMs": 1774598400000,
+        "lastRunAtMs": 1774512826294,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 443214,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "db9c90b7-786e-4198-b50b-6cd18a576b4d",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:1022202630",
+      "name": "每日备份",
+      "enabled": true,
+      "createdAtMs": 1774485292857,
+      "updatedAtMs": 1774566026217,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 18 * * *",
+        "tz": "UTC"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行每日备份：运行备份脚本 /home/openclaw/.openclaw/backup-script.sh，检查备份文件完整性，清理7天前的旧备份。"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "1022202630"
+      },
+      "state": {
+        "nextRunAtMs": 1774634400000,
+        "lastRunAtMs": 1774553882487,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 12143730,
+        "lastError": "Error: All models failed (2): custom-newapi-epsq-cn/claude-opus-4-6: LLM request failed: network connection error. (timeout) | custom-api-deepseek-com/deepseek-chat: LLM request failed: network connection error. (timeout)",
+        "lastErrorReason": "timeout",
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1
+      }
+    },
+    {
+      "id": "628893e5-84c4-494e-8a12-95931329966c",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:1022202630",
+      "name": "日志轮转",
+      "enabled": true,
+      "createdAtMs": 1774485932690,
+      "updatedAtMs": 1774567472085,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 18 * * *",
+        "tz": "UTC"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行日志轮转：运行 /home/openclaw/.openclaw/log-rotation/logrotate.sh，按天轮转日志，保留30天，压缩7天前的日志，清理过期文件。"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "1022202630"
+      },
+      "state": {
+        "nextRunAtMs": 1774634400000,
+        "lastRunAtMs": 1774566026217,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 1445868,
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0
+      }
+    }
+  ]
+}
